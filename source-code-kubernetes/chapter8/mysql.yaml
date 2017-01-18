@@ -1,0 +1,29 @@
+--- 
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: mysql
+  labels: 
+    app: mysql-app
+spec: 
+  replicas: 3
+  selector: 
+    app: mysql-app
+    deployment: v1
+  template: 
+    metadata: 
+      labels: 
+        app: mysql-app
+        deployment: v1
+    spec: 
+      containers: 
+        - 
+          env: 
+            - 
+              name: MYSQL_ROOT_PASSWORD
+              value: mysql
+          image: mysql
+          name: mysql
+          ports: 
+            - 
+              containerPort: 3306

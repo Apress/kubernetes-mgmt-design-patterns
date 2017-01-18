@@ -1,0 +1,20 @@
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: server
+spec: 
+  containers: 
+    - 
+      image: nginx
+      name: nginx
+      volumeMounts: 
+        - 
+          mountPath: /git-repo
+          name: git-volume
+  volumes: 
+    - 
+      gitRepo: 
+        repository: ""
+        revision: ""
+      name: git-volume 

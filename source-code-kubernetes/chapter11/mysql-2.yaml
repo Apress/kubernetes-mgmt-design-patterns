@@ -1,0 +1,39 @@
+  --- 
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  labels: 
+    app: mysql-app
+  name: mysql
+spec: 
+  replicas: 3
+  selector: 
+    app: mysql-app
+  template: 
+    metadata: 
+      labels: 
+        app: mysql-app
+    spec: 
+      containers: 
+        - 
+          env: 
+            - 
+              name: MYSQL_ROOT_PASSWORD
+              valueFrom: 
+                configMapKeyRef: 
+                  key: mysql.root.password
+                  name: mysql-config-2
+            
+            - 
+              name: MYSQL_ALLOW_EMPTY_PASSWORD
+              valueFrom: 
+                configMapKeyRef: 
+                  key: mysql.allow.empty.password
+                  name: mysql-config-2
+          image: mysql
+          name: mysql
+          ports: 
+            - 
+              containerPort: 3306
+
+

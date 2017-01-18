@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-cert
+data:
+  cert.pem: |-
+    -----BEGIN CERTIFICATE-----
+    abc
+    -----END CERTIFICATE-----
+  privkey.pem: |-
+    -----BEGIN PRIVATE KEY-----
+    abc
+    -----END PRIVATE KEY-----

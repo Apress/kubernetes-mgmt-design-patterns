@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: object-quotas
+spec:
+  hard:
+    configmaps: "5"
+    replicationcontrollers: "1"
+    services: "2"
+
+

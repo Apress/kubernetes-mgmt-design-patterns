@@ -1,0 +1,12 @@
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-without-annotation
+  labels: 
+    name: multischeduler
+spec: 
+  containers: 
+    - 
+      image: "gcr.io/google_containers/pause:2.0"
+      name: pod-without-annotation

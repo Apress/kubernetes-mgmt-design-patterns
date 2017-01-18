@@ -1,0 +1,10 @@
+subnets:
+   -
+    availabilityZone: us-east-1b
+    instanceCIDR: "10.0.0.0/24"
+   -
+    availabilityZone: us-east-1c
+    instanceCIDR: "10.0.0.0/24"
+   -
+    availabilityZone: us-east-1d
+    instanceCIDR: "10.0.0.0/24"

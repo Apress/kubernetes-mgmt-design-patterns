@@ -1,0 +1,30 @@
+--- 
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  labels: 
+    app: mysqlapp
+  name: mysql-rc
+namespace: kube-system
+spec: 
+  replicas: 3
+  selector: 
+    app: mysqlapp
+  template: 
+    metadata: 
+      labels: 
+        app: mysqlapp
+    spec: 
+      containers: 
+        - 
+          env: 
+            - 
+              name: MYSQL_ROOT_PASSWORD
+              value: mysql
+          image: mysql
+          name: mysql
+          ports: 
+            - 
+              containerPort: 3306
+
+

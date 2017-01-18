@@ -1,0 +1,4 @@
+sudo yum install NetworkManager
+sudo systemctl start NetworkManager
+sudo systemctl enable NetworkManager
+sudo systemctl status NetworkManager

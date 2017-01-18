@@ -1,0 +1,30 @@
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  labels: 
+    app: helloApp
+  name: hello-world
+spec: 
+  containers: 
+    - 
+      args: 
+        - " $(MESSAGE1)"
+        - " $(MESSAGE2)"
+      command: 
+        - /bin/echo
+      env: 
+        - 
+          name: MESSAGE1
+          valueFrom: 
+            configMapKeyRef: 
+              key: message1
+              name: hello-config
+        - 
+          name: MESSAGE2
+          valueFrom: 
+            configMapKeyRef: 
+              key: message2
+              name: hello-config
+      image: ubuntu
+      name: hello

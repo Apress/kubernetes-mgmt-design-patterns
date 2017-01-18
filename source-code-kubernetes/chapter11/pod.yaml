@@ -1,0 +1,21 @@
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: configmap-volume
+spec: 
+  containers: 
+    - 
+      image: nginx
+      name: nginx
+      volumeMounts: 
+        - 
+          mountPath: /etc/config/cert
+          name: config-volume
+          readOnly: true
+      volumes: 
+        - 
+          configMap: 
+            name: nginx-cert
+          name: config-volume
+

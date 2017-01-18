@@ -1,0 +1,27 @@
+[OSEv3:children]
+masters
+etcd
+lb
+nodes
+Next, specify some variables 
+ [OSEv3:vars]
+ansible_user=centos
+ansible_sudo=true
+deployment_type=origin
+ansible_ssh_private_key_file=~/docker.pem
+
+[masters]
+ec2-54-90-107-98.compute-1.amazonaws.com openshift_ip=10.156.14.183 openshift_public_ip=54.90.107.98 openshift_hostname=ip-10-156-14-183.ec2.internal openshift_public_hostname=ec2-54-90-107-98.compute-1.amazonaws.com
+ec2-54-221-182-68.compute-1.amazonaws.com openshift_ip=10.154.46.153 openshift_public_ip=54.221.182.68 openshift_hostname=ip-10-154-46-153.ec2.internal openshift_public_hostname=ec2-54-221-182-68.compute-1.amazonaws.com
+ 
+[etcd]
+ec2-54-160-210-253.compute-1.amazonaws.com openshift_ip=10.153.195.121 openshift_public_ip=54.160.210.253 openshift_hostname=ip-10-153-195-121.ec2.internal openshift_public_hostname=ec2-54-160-210-253.compute-1.amazonaws.com
+ 
+[lb]
+ec2-54-226-7-241.compute-1.amazonaws.com openshift_ip=10.154.38.224 openshift_public_ip=54.226.7.241 openshift_hostname=ip-10-154-38-224.ec2.internal openshift_public_hostname=ec2-54-226-7-241.compute-1.amazonaws.com
+
+[nodes]
+ec2-54-90-107-98.compute-1.amazonaws.com openshift_ip=10.156.14.183 openshift_public_ip=54.90.107.98 openshift_hostname=ip-10-156-14-183.ec2.internal openshift_public_hostname=ec2-54-90-107-98.compute-1.amazonaws.com openshift_node_labels="{'region': 'primary', 'zone': 'east'}" openshift_schedulable=false
+ec2-54-221-182-68.compute-1.amazonaws.com openshift_ip=10.154.46.153 openshift_public_ip=54.221.182.68 openshift_hostname=ip-10-154-46-153.ec2.internal openshift_public_hostname=ec2-54-221-182-68.compute-1.amazonaws.com openshift_node_labels="{'region': 'primary', 'zone': 'east'}" openshift_schedulable=false
+ec2-54-159-26-13.compute-1.amazonaws.com  openshift_ip=10.113.176.99 openshift_public_ip=54.159.26.13 openshift_hostname=ip-10-113-176-99.ec2.internal openshift_public_hostname=ec2-54-159-26-13.compute-1.amazonaws.com openshift_node_labels="{'region': 'primary', 'zone': 'east'}"
+

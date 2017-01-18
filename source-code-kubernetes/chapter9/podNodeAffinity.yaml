@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-labels
+  annotations:
+    scheduler.alpha.kubernetes.io/affinity: >
+      {
+        "nodeAffinity": {
+          "preferredDuringSchedulingIgnoredDuringExecution": [
+            {
+              "weight": 75,
+              "preference":
+              {
+                "matchExpressions": [
+                  {
+                    "key": "kubernetes.io/image-name",
+                    "operator": "In",
+                    "values": ["nginx", "hello-world"]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    kubernetes.io/image-name: hello-world
+spec:
+  containers:
+  - name: with-labels
+    image: nginx
+

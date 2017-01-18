@@ -1,0 +1,15 @@
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: counter
+spec: 
+  containers: 
+    - 
+      args: 
+        - bash
+        - "-c"
+        - "for ((i = 0; ; i++)); do echo \"$i: $(date)\"; sleep 1; done"
+      image: "ubuntu:14.04"
+      name: count
+

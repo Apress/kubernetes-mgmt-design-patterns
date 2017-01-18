@@ -1,0 +1,14 @@
+--- 
+apiVersion: v1
+kind: Pod
+metadata: 
+  annotations: 
+    scheduler.alpha.kubernetes.io/name: default-scheduler
+  labels: 
+    name: multischeduler
+  name: default-scheduler
+spec: 
+  containers: 
+    - 
+      image: "gcr.io/google_containers/pause:2.0"
+      name: pod-with-default-scheduler-annotation-container
