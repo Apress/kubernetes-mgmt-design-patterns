@@ -1,6 +1,6 @@
 #Apress Source Code
 
-This repository accompanies [*Kubernetes Management Design Patterns*](http://www.apress.com/9781484225974) by Vohra, Deepak (Apress, 2017).
+This repository accompanies [*Kubernetes Management Design Patterns*](http://www.apress.com/9781484225974) by Deepak Vohra (Apress, 2017).
 
 ![Cover image](9781484225974.jpg)
 
